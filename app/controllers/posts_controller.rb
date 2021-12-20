@@ -1,14 +1,17 @@
 class PostsController < ApplicationController
   before_action :search
-
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_index, only: [:edit, :update, :destroy]
+  
   def index
     @posts = Post.all.order('created_at DESC')
   end
-
+  
   def new
     @post = Post.new
   end
-
+  
   def create
     @post = Post.new(post_params)
     if @post.save
@@ -17,23 +20,17 @@ class PostsController < ApplicationController
       render :new
     end
   end
-
-  def destroy
-    post = Post.find(params[:id])
-    post.destroy
-    redirect_to root_path
+  
+  def show
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
-
+  
   def update
-    @post = Post.find(params[:id])
     if @post.update(post_params)
       redirect_to root_path(@post.id)
     else
-      @post = Post.find(params[:id])
       redirect_to edit_post_path(@post.id)
     end
     if params[:delete_image]
@@ -42,10 +39,11 @@ class PostsController < ApplicationController
     end
   end
 
-  def show
-    @post = Post.find(params[:id])
+  def destroy
+    @post.destroy
+    redirect_to root_path
   end
-
+  
   def search
     if params[:q]&.dig(:title)
       squished_keywords = params[:q][:title].squish
@@ -59,5 +57,13 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :text, :reference, :genre_id, :image).merge(user_id: current_user.id)
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
+  def move_to_index
+    redirect_to action: :index if current_user.id != @post.user_id
   end
 end
