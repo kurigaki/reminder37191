@@ -1,0 +1,20 @@
+.header-all {
+  background-image: url("/images/cork01.jpg");
+  background-color: rgba(255, 255, 255, 0.5);
+  background-blend-mode:lighten;
+  width: 100vw;
+  padding: 2vh 2vw;
+}
+
+ul {
+  list-style: none;
+}
+
+.header-lists {
+  display: flex;
+  margin: auto;
+}
+
+.btn{
+  margin: 1px;
+}
