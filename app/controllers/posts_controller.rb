@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   before_action :move_to_index, only: [:edit, :update, :destroy]
 
   def index
-    @posts = Post.all.order('created_at DESC')
+    @posts = Post.page(params[:page]).per(10).order('updated_at DESC')
   end
 
   def new
@@ -50,7 +50,7 @@ class PostsController < ApplicationController
       params[:q][:title_cont_any] = squished_keywords.split(' ')
     end
     @q = Post.ransack(params[:q])
-    @posts = @q.result.order('created_at DESC')
+    @posts = @q.result.page(params[:page]).per(10).order('updated_at DESC')
   end
 
   private
@@ -66,4 +66,5 @@ class PostsController < ApplicationController
   def move_to_index
     redirect_to action: :index if current_user.id != @post.user_id
   end
+
 end

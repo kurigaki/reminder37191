@@ -16,6 +16,8 @@
   </div>
 </div><br>
 
+<%= paginate @posts, theme: 'twitter-bootstrap-4' %>
+
 <div class="white">
   <% @posts.each do |post| %>
     <table class="post-table">
@@ -38,6 +40,8 @@
 <div class="text-center">
   <%=link_to '検索ページTOP', search_posts_path, class: "btn btn-secondary btn-block" %>
 </div><br>
+
+<%= paginate @posts, theme: 'twitter-bootstrap-4' %>
 
   </div>
 </div>

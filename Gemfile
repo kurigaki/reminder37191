@@ -62,6 +62,9 @@ gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 gem 'active_hash'
 gem 'ransack'
+gem 'kaminari'
+gem 'bootstrap4-kaminari-views'
+
 
 group :development do
   gem 'rubocop', require: false
