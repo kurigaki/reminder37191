@@ -3,15 +3,15 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :move_to_index, only: [:edit, :update, :destroy]
-  
+
   def index
     @posts = Post.all.order('created_at DESC')
   end
-  
+
   def new
     @post = Post.new
   end
-  
+
   def create
     @post = Post.new(post_params)
     if @post.save
@@ -20,13 +20,13 @@ class PostsController < ApplicationController
       render :new
     end
   end
-  
+
   def show
   end
 
   def edit
   end
-  
+
   def update
     if @post.update(post_params)
       redirect_to root_path(@post.id)
@@ -43,7 +43,7 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to root_path
   end
-  
+
   def search
     if params[:q]&.dig(:title)
       squished_keywords = params[:q][:title].squish
