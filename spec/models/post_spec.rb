@@ -20,6 +20,11 @@ RSpec.describe Post, type: :model do
       end
     end
     context '新規登録できない場合' do
+      it 'ジャンルが必須であること。' do
+        @post.genre = nil
+        @post.valid?
+        expect(@post.errors.full_messages).to include("Genre can't be blank")
+      end
       it 'タイトルが必須であること。' do
         @post.title = ''
         @post.valid?

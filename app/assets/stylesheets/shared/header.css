@@ -4,6 +4,23 @@
   background-blend-mode:lighten;
   width: 100vw;
   padding: 2vh 2vw;
+  position: relative;
+}
+
+.header-rogo{
+  height: 80px;
+  width: 100px;
+  position: absolute;
+  top: 0%;
+  left: 5%;
+}
+
+.header-pict{
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  top: 0%;
+  left: 90%;
 }
 
 ul {
