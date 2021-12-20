@@ -4,8 +4,18 @@
   background-blend-mode:lighten;
   width: 100vw;
   padding: 2vh 2vw;
+  position: relative;
 }
 
 .Copyright-color{
   background-color:#00ffff;
+  
+}
+
+.footer-pict{
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  top: -200%;
+  left: 80%;
 }
