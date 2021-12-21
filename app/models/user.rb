@@ -6,8 +6,8 @@ class User < ApplicationRecord
 
   validates :name, presence: true
 
-  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
-  validates_format_of :password, with: PASSWORD_REGEX, message: 'is invalid. Include both letters and numbers'
+  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,32}+\z/i.freeze
+  validates_format_of :password, with: PASSWORD_REGEX, message: 'が無効です。文字と数字の両方を含んでください'
 
   has_many :posts, dependent: :destroy
   has_many :likes, dependent: :destroy
