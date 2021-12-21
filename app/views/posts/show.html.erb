@@ -10,6 +10,17 @@
 <div class="card col-sm-10 mx-auto mt-10">
   <div class="card-body">
     <div class="col text-center">
+
+      
+      <h3><%= image_tag "/images/heart_shiny.png", class:"like-pict" %>いいね件数: <%= @post.likes.count %></h3>
+      <% if user_signed_in? %>
+        <% if current_user.already_liked?(@post) %>
+          <%= button_to 'いいねを取り消す', post_like_path(@post), method: :delete %>
+        <% else %>
+          <%= button_to 'いいね', post_likes_path(@post) %>
+        <% end %><br>
+      <% end%>
+
       <table class="show-table">
         <tr>
         <th class="show-th"><h6 class="pink">ジャンル</h6></th>

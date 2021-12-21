@@ -2,6 +2,7 @@
 
 <div class="white">
   <% @posts.each do |post| %>
+      いいね<%= image_tag "/images/heart_shiny.png", class:"like-pict" %>(<%= post.liked_users.count %>)
     <table class="post-table">
       <tr>
         <th class="post-th"><h6 class="pink">タイトル</h6></th>
@@ -21,7 +22,8 @@
           <% end %>
         </div>
       </tr>
-    </table><br>
+    </table>
+    <br>
   <% end %>
 </div>
 
