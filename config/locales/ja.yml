@@ -15,3 +15,16 @@ ja:
           other: "<strong>1-%{count}</strong>/%{count}件中"
       more_pages:
         display_entries: "<strong>%{first}-%{last}</strong>/%{total}件中"
+
+
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: お名前
+      post:
+        user: ユーザー
+        title: タイトル
+        text: テキスト
+        image: 画像
+        genre_id: ジャンル

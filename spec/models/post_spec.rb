@@ -23,22 +23,22 @@ RSpec.describe Post, type: :model do
       it 'ジャンルが必須であること。' do
         @post.genre = nil
         @post.valid?
-        expect(@post.errors.full_messages).to include("Genre can't be blank")
+        expect(@post.errors.full_messages).to include("ジャンル を選択してください")
       end
       it 'タイトルが必須であること。' do
         @post.title = ''
         @post.valid?
-        expect(@post.errors.full_messages).to include("Title can't be blank")
+        expect(@post.errors.full_messages).to include("タイトルを入力してください")
       end
       it 'テキストが必須であること。' do
         @post.text = ''
         @post.valid?
-        expect(@post.errors.full_messages).to include("Text can't be blank")
+        expect(@post.errors.full_messages).to include("テキストを入力してください")
       end
       it 'userが紐付いていなければ投稿できない' do
         @post.user = nil
         @post.valid?
-        expect(@post.errors.full_messages).to include('User must exist')
+        expect(@post.errors.full_messages).to include('ユーザーを入力してください')
       end
     end
   end
