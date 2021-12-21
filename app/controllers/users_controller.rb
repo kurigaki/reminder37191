@@ -12,8 +12,12 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    if @user == current_user
     @name = current_user.name
     @posts = Post.includes(:user).order('updated_at DESC')
+    else
+      redirect_to root_path
+    end
   end
 
   private
