@@ -8,4 +8,11 @@ class User < ApplicationRecord
 
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
   validates_format_of :password, with: PASSWORD_REGEX, message: 'is invalid. Include both letters and numbers'
+
+  has_many :posts, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :liked_posts, through: :likes, source: :post
+  def already_liked?(post)
+    self.likes.exists?(post_id: post.id)
+  end
 end

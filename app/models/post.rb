@@ -4,6 +4,9 @@ class Post < ApplicationRecord
   belongs_to :user
   has_one_attached :image
 
+  has_many :likes
+  has_many :liked_users, through: :likes, source: :user
+
   validates :title, presence: true
   validates :text, presence: true
   validates :genre_id, numericality: { other_than: 0, message: "can't be blank" }

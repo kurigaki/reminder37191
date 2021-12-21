@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :search
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :move_to_index, only: [:edit, :update, :destroy]
 
@@ -22,6 +22,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @like = Like.new
   end
 
   def edit
