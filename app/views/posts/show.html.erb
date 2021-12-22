@@ -45,7 +45,7 @@
         <tr>
         <th class="show-th"><h6 class="pink">参考画像</h6></th>
         <% if @post.image.attached? %>
-        <td class="show-td"><%= image_tag @post.image.variant(resize: '500x500') ,class:"post-img" %></td>
+        <td class="show-td"><%= image_tag @post.image, class:"img-fluid" %></td>
         <% else %>
         <td class="show-td">参考画像がありません</td>
         <% end %>
