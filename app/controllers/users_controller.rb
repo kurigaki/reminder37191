@@ -18,6 +18,7 @@ class UsersController < ApplicationController
     else
       redirect_to root_path
     end
+    @posts = Post.page(params[:page]).per(10).order('updated_at DESC')
   end
 
   private

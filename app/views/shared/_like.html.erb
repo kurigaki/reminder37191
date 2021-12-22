@@ -1,6 +1,6 @@
 <div class="side-bar-header">
   <h3 class="side-bar-like">いいねした投稿</h3>
-  <% @user.liked_posts.each do |post| %>
+  <% @user.liked_posts.reverse.each do |post| %>
       <table class="like-table">
         <tr>
           <th class="like-th"><%= link_to post.title, post_path(post.id), method: :get%></th>
