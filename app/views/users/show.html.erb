@@ -8,6 +8,7 @@
 
 
 <h3 class="mypage-head"><%= "#{current_user.name}さんが投稿したもの"%></h3>
+  <%= paginate @posts, theme: 'twitter-bootstrap-4' %>
 <% @posts.each do |post| %>
 <div class="white">
   <% if user_signed_in? && current_user.id == post.user_id %>
@@ -36,6 +37,8 @@
   <br>
   </div>
   <% end %>
+
+  <%= paginate @posts, theme: 'twitter-bootstrap-4' %>
   
 
   </div>
