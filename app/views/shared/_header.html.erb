@@ -1,7 +1,6 @@
 <header class='header-all'>
-    <%= image_tag "/images/reminder_logo.png", class:"header-rogo" %>
-    <%= image_tag "/images/school_sensei_kokuban.png", class:"header-pict" %>
   <div class='nav'>
+      <img src="/images/reminder_logo.png" class="header-rogo" alt="Responsive image">
     <ul class='header-lists'>
       <%= link_to 'トップページ', root_path, class: "btn btn-primary" %>
       <% if user_signed_in? %>
@@ -14,5 +13,6 @@
       <% end %>
       <%= link_to '投稿する', new_post_path, class: "btn btn-success" %>
     </ul>
+      <img src= "/images/school_sensei_kokuban.png" class="header-pict" alt="Responsive image" >
   </div>
 </header>
