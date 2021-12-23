@@ -13,9 +13,6 @@
 }
 
 .footer-pict{
-  height: 200px;
-  width: 200px;
-  position: absolute;
-  top: -200%;
-  left: 80%;
+  margin: -160px 0 0px 0;
+  float: right;
 }

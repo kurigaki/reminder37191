@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 
 <div class="wrapper">
-  <div class="side-bar">
+  <div class="col-sm-3 mx-auto">
     <%= render "shared/side_bar" %>
   </div>
     <div class="posts">
@@ -51,7 +51,7 @@
       <div>
         参考画像
         <span class="any">任意</span><br>
-        <%= image_tag @post.image.variant(resize: '250x250') %>
+        <%= image_tag @post.image, class:"img-fluid" %>
         <%= form_for([:new, @post]) do |f| %>
           <%= f.submit value: "画像を削除",name: "delete_image",data: { confirm: "参考画像を削除しますか？"}, class: "btn_send"%>
         <% end %>
