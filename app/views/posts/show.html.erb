@@ -22,19 +22,19 @@
       <% end%>
 
       <table class="show-table">
-        <tr>
+        <tr class="col-sm-10 mx-auto">
         <th class="show-th"><h6 class="pink">ジャンル</h6></th>
         <td class="show-td"><%= @post.genre.name %></td>
         </tr>
-        <tr>
+        <tr class="col-sm-10 mx-auto">
         <th class="show-th"><h6 class="pink">タイトル</h6></th>
         <td class="show-td"><%= @post.title %></td>
         </tr>
-        <tr>
+        <tr class="col-sm-10 mx-auto">
         <th class="show-th"><h6 class="pink">説明</h6></th>
         <td class="show-td"><%= @post.text %></td>
         </tr>
-        <tr>
+        <tr class="col-sm-10 mx-auto">
         <th class="show-th"><h6 class="pink">参考資料</h6></th>
         <% if @post.reference.present? %>
         <td class="show-td"><%= link_to @post.reference, @post.reference %></td>
@@ -42,7 +42,7 @@
         <td class="show-td">参考資料がありません</td>
         <% end %>
         </tr>
-        <tr>
+        <tr class="col-sm-10 mx-auto">
         <th class="show-th"><h6 class="pink">参考画像</h6></th>
         <% if @post.image.attached? %>
         <td class="show-td"><%= image_tag @post.image, class:"img-fluid" %></td>
@@ -50,15 +50,15 @@
         <td class="show-td">参考画像がありません</td>
         <% end %>
         </tr>
-        <tr>
+        <tr class="col-sm-10 mx-auto">
         <th class="show-th"><h6 class="pink">投稿者名</h6></th>
         <td class="show-td"><%= @post.user.name %></td>
         </tr>
-        <tr>
+        <tr class="col-sm-10 mx-auto">
         <th class="show-th"><h6 class="pink">投稿日時</h6></th>
         <td class="show-td"><%= @post.created_at.strftime("%Y-%m-%d %H:%M")%></td>
         </tr>
-        <tr>
+        <tr class="col-sm-10 mx-auto">
         <th class="show-th"><h6 class="pink">最終更新</h6></th>
         <td class="show-td"><%= @post.updated_at.strftime("%Y-%m-%d %H:%M")%></td>
         </tr>
