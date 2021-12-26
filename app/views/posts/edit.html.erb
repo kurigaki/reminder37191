@@ -45,9 +45,7 @@
           <span class="any">任意</span><br>
           <%= f.file_field :image, class:"form-control" %>
           <%= image_tag @post.image, class:"img-fluid" %>
-          <%= form_for([:new, @post]) do |f| %>
-            <%= f.submit value: "画像を削除",name: "delete_image",data: { confirm: "参考画像を削除しますか？"}, class: "btn_send"%>
-          <% end %>
+          <%= f.submit value: "画像を削除",name: "delete_image",data: { confirm: "参考画像を削除しますか？"}, class: "btn_send"%>
         </div>
       <% else %>
         <div class="form-group">
