@@ -5,3 +5,9 @@
 .check-boxes{
   margin: 0 7px;
 }
+
+.side-bar-search{
+  text-align: center;
+  background-color: gray;
+  color: deepskyblue;
+}
