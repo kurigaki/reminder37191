@@ -1,5 +1,4 @@
 <div class="container-fluid">
-  <h3 class="side-bar-search">検索機能</h3>
     <%= search_form_for @q, url: search_posts_path, html: {id: "detailed-search-form"} do |f| %>
     <div class="side-search-field">
       <%= f.label :user_name_cont, '投稿者名' %>
