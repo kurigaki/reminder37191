@@ -9,9 +9,15 @@
 .header-rogo{
   margin: 0 0 0 5px;
 }
+@media screen and (max-width: 768px) {
+.header-rogo{ display:none!important; }
+}
 
 .header-pict{
   margin: 0 5px 0 0;
+}
+@media screen and (max-width: 768px) {
+.header-pict{ display:none!important; }
 }
 
 ul {
@@ -22,6 +28,7 @@ ul {
   display: flex;
   margin: auto;
 }
+
 
 .btn{
   margin: 1px;
