@@ -1,20 +1,20 @@
-<div class="col-sm-auto mx-auto">
+<div class="container-fluid">
   <h3 class="side-bar-search">検索機能</h3>
     <%= search_form_for @q, url: search_posts_path, html: {id: "detailed-search-form"} do |f| %>
     <div class="side-search-field">
       <%= f.label :user_name_cont, '投稿者名' %>
       <br>
-      <%= f.text_field :user_name_cont, placeholder: '例) 田中太郎', class: "card col-sm-10 mx-auto" %>
+      <%= f.text_field :user_name_cont, placeholder: '例) 田中太郎', class: "col-sm-10" %>
     </div>
     <div class="side-search-field">
       <%= f.label :title, 'タイトル' %>
       <br>
-      <%= f.text_field :title, placeholder: '例) バリデーション', value: params[:q]&.dig(:title), class: "card col-sm-10 mx-auto"  %>
+      <%= f.text_field :title, placeholder: '例) バリデーション', value: params[:q]&.dig(:title), class: "col-sm-10"  %>
     </div>
     <div class="side-search-field">
       <%= f.label :text_cont, '説明' %>
       <br>
-      <%= f.text_area :text_cont, placeholder: '例) 入力チェック', class: "card col-sm-10 mx-auto"  %>
+      <%= f.text_area :text_cont, placeholder: '例) 入力チェック', class: "col-sm-10"  %>
     </div>
     <div class="side-search-field">
       <%= f.label :genre_id_in, 'ジャンル' %>
