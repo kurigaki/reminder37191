@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 
 <div class="wrapper">
-  <div class="col-sm-3 mx-auto">
+  <div class="col-sm-3">
     <%= render "shared/side_bar" %>
   </div>
     <div class="posts">
@@ -9,7 +9,7 @@
 
 
 
-<div class="card col-sm-5 mx-auto mt-5">
+<div class="card col-sm-5 mx-auto">
   <div class="card-body">
     <h3 class="mt-1 mb-3">編集する</h3>
     <%= form_with(model: @post, local: true) do |f| %>
